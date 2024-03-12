@@ -15,7 +15,18 @@ searchInput.addEventListener('input', function (e) {
     });
 });
 
+const recipeFilter = document.getElementById('recipeFilter');
 
+recipeFilter.addEventListener('change', function () {
+    const selectedType = recipeFilter.value;
+
+    recipes.forEach((recipe) => {
+        const isVisible = selectedType === 'all' || recipe.type === selectedType;
+        if (recipe.element) {
+            recipe.element.style.display = isVisible ? 'block' : 'none';
+        }
+    });
+});
 
 data.burgers.forEach(recipe => {
     recipes.push({ ...recipe, type: 'burger' });
@@ -56,10 +67,10 @@ function renderCards(foodArray, type) {
             <button class="${type}RecipeBtn${index}" onclick="toggleRecipe(${index}, '${type}')">Show Recipe</button>
         </div>`;
         div.append(info);
-        
+
         const recipeInfo = {
             name,
-            element: info, 
+            element: info,
             type
         };
 
@@ -71,11 +82,10 @@ function renderCards(foodArray, type) {
 renderCards(data.burgers, 'burger');
 renderCards(data.meat, 'meat');
 renderCards(data.salads, 'salad');
-renderCards(data.desserts, 'dessert');
+renderCards(data.desserts, 'dessert'); 
 renderCards(data.pasta, 'pasta');
 renderCards(data.drinks, 'drink');
 renderCards(data.seaFood, 'seaFood');
-
 
 window.closeModal = function () {
     modal.style.display = 'none';
