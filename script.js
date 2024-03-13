@@ -3,7 +3,6 @@ import { data } from "./data.js";
 const div = document.querySelector('.container');
 const modal = document.getElementById('recipeModal');
 const searchInput = document.querySelector('#searchInput');
-// At the beginning of the script.js file
 const addRecipeForm = document.getElementById('addRecipeForm');
 const addRecipeBtn = document.getElementById('addRecipeBtn');
 const recipeForm = document.getElementById('recipeForm');
@@ -15,15 +14,9 @@ addRecipeBtn.addEventListener('click', () => {
     addRecipeForm.style.display = 'block';
 });
 
-// Existing code...
-
 window.closeAddRecipeModal = function() {
     addRecipeForm.style.display = 'none';
 }
-
-// Existing code...
-
-
 recipeForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const recipeName = document.getElementById('recipeName').value;
@@ -39,8 +32,8 @@ recipeForm.addEventListener('submit', (e) => {
             type: recipeType
         };
 
-        recipes.push(newRecipe); // Add the new recipe to the recipes array
-        renderNewRecipe(newRecipe); // Render the new recipe on the page
+        recipes.push(newRecipe); 
+        renderNewRecipe(newRecipe);
         closeModal();
         closeAddRecipeModal();
         recipeForm.reset();
