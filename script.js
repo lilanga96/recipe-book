@@ -14,7 +14,6 @@ addRecipeBtn.addEventListener('click', () => {
 window.closeAddRecipeModal = function() {
     addRecipeForm.style.display = 'none';
 }
-
 recipeForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const recipeName = document.getElementById('recipeName').value;
