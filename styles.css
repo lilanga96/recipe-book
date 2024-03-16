@@ -10,8 +10,15 @@ body {
     grid-gap: 10px;
     margin-left: 15px;
     
-    
-  }
+    }
+
+  h1{
+    font-family: karla;
+    font-size: x-large;
+    letter-spacing: -0.06em;
+    color: #4CAF50;
+    margin-left: 2rem;
+  }  
   
   .card {
     width: 300px;
@@ -19,12 +26,56 @@ body {
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px  10px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
     
    
   }
+
+ .inputs{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    
+    
+ }
+
+ input[type=text]{
+    outline: none;
+    border: 1px solid #4CAF50;
+    border-radius: 25px;
+    width: 300px;
+    text-align: center;
+    height: 35px;
+}
+
+
+.icon{
+    position: relative;
+    right: 2rem;
+    top: 10px;
+    color: #4CAF50;
+    
+    
+}
+ ::placeholder{
+    text-align: center;
+    color: #4CAF50;
+ }
+
+
+
+
+ #recipeFilter{
+    outline: none;
+    border: 1px solid #4CAF50;
+    border-radius: 25px;
+    margin-left: 1rem;
+ }
   
   .card-image {
     width: 100%;
@@ -37,22 +88,82 @@ body {
   
   .card-title {
     margin-top: 0;
+    position: relative;
+    bottom: 0.5rem;
+    text-align: center;
   }
   
   .card-recipe {
     color: #555;
   }
 
-  .card-button {
+  button{
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 4px;
+    border-radius: 25px;
+    position: relative;
+    left: 6rem;
+    bottom: 1rem;
+    transition: background-color 0.3s ease;
+    
   }
 
-  /* Add this to style the modal */
+  button:hover{
+    background-color: #4CAF50;
+  }
+
+  #formBtn{
+    position: relative;
+    top: 1rem;
+    left: 15rem;
+  }
+
+  select{
+    background-color: #4CAF50;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+  }
+
+  .selectType{
+    position: relative;
+    left: 8rem;
+  }
+
+  textarea{
+    position: relative;
+    bottom: 2rem;
+    left: auto;
+    margin-right: 1rem;
+    border-color: #4CAF50;
+    border-radius: 25px;
+    outline: none;
+  }
+
+
+  #addRecipeBtn{
+    position: relative;
+    top: 1rem;
+    left: auto;
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    border-radius: 24px;
+  }
+
+  #addRecipeBtn:hover{
+    background-color: #4CAF50;
+    color: white;
+  }
+
+
 .modal {
     display: none;
     position: fixed;
@@ -61,6 +172,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .modal-content {
@@ -84,11 +196,29 @@ body {
     cursor: pointer;
 }
 
-/* Add this to hide the scrollbar when the modal is open */
+
 body.modal-open {
     overflow: hidden;
 }
 
 
- 
+@media screen and (max-width: 900px) {
+  .card{
+    margin-left: 5rem;
+  }
+
+  #addRecipeBtn{
+    margin-left: 2rem;
+  }
+
+  textarea{
+    margin-top: 2.5rem;
+    
+  }
+
+  #recipeImage{
+    margin-top: 0.5rem;
+  }
+  
+}
   

@@ -6,9 +6,21 @@
     <title>Recipe-Book app</title>
     <link rel="stylesheet" href="styles.css">
     <script src="./script.js" type="module" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+    <button id="addRecipeBtn">Add Recipe</button> 
+       
+    </header>
+    <div class="inputs">
+      
     <input  id="searchInput" type="text" placeholder="search for recipes...">
+    <ion-icon class="icon" name="search-outline"></ion-icon>
     <select id="recipeFilter">
         <option value="all">All Recipes</option>
         <option value="burger">Burgers</option>
@@ -18,8 +30,9 @@
         <option value="pasta">Pasta</option>
         <option value="seaFood">Sea Food</option>
         <option value="drink">Drinks</option>
-    </select>
-    <button id="addRecipeBtn">Add Recipe</button>
+    </select></div>
+    
+    
     <div class="container">
          <div id="recipeModal" class="modal">
             <div class="modal-content">
@@ -34,7 +47,7 @@
             <form id="recipeForm">
                 <input type="text" id="recipeName" placeholder="Recipe Name" required>
                 <input type="text" id="recipeImage" placeholder="Image URL" required>
-                <select id="recipeType" required>
+                <select class="selectType" id="recipeType" required>
                     <option value="">Select Type</option>
                     <option value="burger">Burger</option>
                     <option value="meat">Meat</option>
@@ -44,10 +57,13 @@
                     <option value="seaFood">Sea Food</option>
                     <option value="drink">Drink</option>
                 </select>
-                <textarea id="recipeText"  placeholder="Recipe Instructions" required></textarea>
-                <button type="submit">Add Recipe</button>
+                <textarea  id="recipeText"  placeholder="Recipe Instructions" required></textarea>
+                <button id="formBtn" type="submit">Add Recipe</button>
             </form>
         </div>
     </div>
+
+
+    
 </body>
 </html>
